@@ -29,7 +29,7 @@
     <form method="get">
       <table>
         <tr>
-          <td>id</td>
+          <!-- <td>id</td> -->
           <td>nome</td>
           <td>descricao</td>
           <td>preco</td>
@@ -41,6 +41,9 @@
         $results = $db->query("PRAGMA table_info(lista)");
         echo "<tr>";
         while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
+          if ($row["name"] === "id") {
+            continue;
+          } 
           echo "<td><input type='text' name='" . $row["name"] . "'></td>";
         }
         echo "<td>";

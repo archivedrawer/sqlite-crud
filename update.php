@@ -29,11 +29,11 @@
     <form method="get">
       <table>
         <tr>
-          <td>id</td>
+          <!-- <td>id</td> -->
           <td>nome</td>
           <td>descricao</td>
           <td>preco</td>
-          <td><button formaction="./create.php">create</button></td>
+          <!-- <td><button formaction="./create.php">create</button></td> -->
         </tr>
         <?php
         $db = new SQLite3("lista.db");
@@ -42,6 +42,9 @@
         while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
           echo "<tr>";
           foreach ($row as $key => $value) {
+            if ($key === "id") {
+              continue;
+            }
             echo "<td><input type='text' name='" . $key . "' value='" . $value . "'></td>";
           }
           echo "<td>";
