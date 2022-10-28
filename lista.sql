@@ -11,5 +11,6 @@ CREATE TABLE lista (
 );
 
 INSERT INTO lista (nome, descricao, preco) VALUES
-("melancia", "uma deliciosa melancia!", "90990.99"),
-("abacate", "mmmm mm acabate...", "10.11");
+("melancia", "uma deliciosa melancia!", "90.99"),
+("abacate", "mmmm mm acabate,,,", "10.11"),
+("melão", "eu quero um melao", "64");
