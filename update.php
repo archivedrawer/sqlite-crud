@@ -33,10 +33,10 @@
           <td>nome</td>
           <td>descricao</td>
           <td>preco</td>
-          <!-- <td><button formaction="./create.php">create</button></td> -->
+          <!-- <td><button formaction="/create.php">create</button></td> -->
         </tr>
         <?php
-        $db = new SQLite3("lista.db");
+        $db = new SQLite3("./lista.db");
         $db->exec("PRAGMA foreign_keys = ON");
         $results = $db->query("SELECT * FROM lista WHERE id =" . $_GET["id"]);
         while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
@@ -48,7 +48,7 @@
             echo "<td><input type='text' name='" . $key . "' value='" . $value . "'></td>";
           }
           echo "<td>";
-          echo "<button formaction='./update2.php' name='id' value='" . $row["id"] . "'>update</button>";
+          echo "<button formaction='/update2.php' name='id' value='" . $row["id"] . "'>update</button>";
           echo "</td>";
           echo "</tr>";
         }
